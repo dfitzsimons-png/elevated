@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="post-style.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <a href="../index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
@@ -24,37 +23,32 @@
     <li><a href="../blog.html" class="active">Insights</a></li>
     <li><a href="../contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../contact.html">Contact</a>
+</div>
 <div class="post-header fade-up fade-up-1">
   <span class="post-num">Field Notes — 01</span>
   <h1 class="post-title">The First Twenty Minutes After Gates Open</h1>
 </div>
-
 <div class="divider" style="max-width:720px;"></div>
-
 <div class="post-body fade-up fade-up-2">
-<p>There's a particular kind of quiet that happens about ten minutes before gates open at a large outdoor show. The catering is set, the wristbands are counted, the staff are briefed. Everything looks fine. Then the first guests arrive, and you find out very quickly whether your planning was as solid as you thought.</p>
-
-<p>The first twenty minutes after gates open are the most revealing period of any VIP operation. Whatever has been missed — a missing sign, a confusion over wristband colour, a gap between the guest list team and the entry point — it will show itself now. Guests arriving into a VIP area for the first time are forming an impression that will last the entire event. They're also, almost inevitably, arriving in a cluster. The staggered arrival theory rarely holds up in practice.</p>
-
-<p>What typically goes wrong in this window isn't dramatic. It's small. A guest asking where the bar is and nobody nearby to answer. Two staff members checking the same section of the guest list rather than working different areas. A sponsor guest arriving expecting to be met and finding no one who knows their name. None of these are catastrophic on their own. Collectively, they create an atmosphere of mild chaos that's very hard to recover from once it sets in.</p>
-
-<p>The issue is almost always preparation that stops one step too early. Teams brief on what to do when everything is running smoothly. They don't always brief on the first ten minutes, which are never smooth. Guests arrive before they're expected. The bar hasn't finished setting up. The wristbanding point is in the wrong place relative to where the taxis drop people off.</p>
-
-<p>What actually works is treating the first twenty minutes as its own operational phase — separate from the main event, with its own checklist and its own lead. Someone whose sole job in that window is to stand at the arrival point, greet the first wave, and troubleshoot in real time. Not a manager watching from a distance. Someone at the door.</p>
-
-<p>The other thing that works is walking the guest journey the night before or early on the day — from the drop-off point, through entry, to the bar, to the viewing area. Not as a manager checking boxes, but as a guest experiencing it for the first time. You'll find things that no briefing document would have flagged. A fence that cuts the sightline. A sign that's technically correct but positioned where nobody looks. A step that isn't lit.</p>
-
-<p>The first twenty minutes will tell you everything about your operation. The question is whether you find out before the guests do, or at the same time.</p>
+<p>There's a particular kind of quiet that happens about ten minutes before gates open at a large outdoor show. The catering is set, the wristbands are counted, the staff are briefed. Everything looks fine. Then the first guests arrive, and you find out very quickly whether your planning was as solid as you thought.</p><p>The first twenty minutes after gates open are the most revealing period of any VIP operation. Whatever has been missed — a missing sign, a confusion over wristband colour, a gap between the guest list team and the entry point — it will show itself now. Guests arriving into a VIP area for the first time are forming an impression that will last the entire event. They're also, almost inevitably, arriving in a cluster. The staggered arrival theory rarely holds up in practice.</p><p>What typically goes wrong in this window isn't dramatic. It's small. A guest asking where the bar is and nobody nearby to answer. Two staff members checking the same section of the guest list rather than working different areas. A sponsor guest arriving expecting to be met and finding no one who knows their name. None of these are catastrophic on their own. Collectively, they create an atmosphere of mild chaos that's very hard to recover from once it sets in.</p><p>The issue is almost always preparation that stops one step too early. Teams brief on what to do when everything is running smoothly. They don't always brief on the first ten minutes, which are never smooth. Guests arrive before they're expected. The bar hasn't finished setting up. The wristbanding point is in the wrong place relative to where the taxis drop people off.</p><p>What actually works is treating the first twenty minutes as its own operational phase — separate from the main event, with its own checklist and its own lead. Someone whose sole job in that window is to stand at the arrival point, greet the first wave, and troubleshoot in real time. Not a manager watching from a distance. Someone at the door.</p><p>The other thing that works is walking the guest journey the night before or early on the day — from the drop-off point, through entry, to the bar, to the viewing area. Not as a manager checking boxes, but as a guest experiencing it for the first time. You'll find things that no briefing document would have flagged. A fence that cuts the sightline. A sign that's technically correct but positioned where nobody looks. A step that isn't lit.</p><p>The first twenty minutes will tell you everything about your operation. The question is whether you find out before the guests do, or at the same time.</p>
 </div>
-
 <div class="post-nav fade-up fade-up-3">
   <span></span>
   <a href="../blog.html">All insights</a>
   <a href="post-2.html">Why Your VIP Queue Is Already Too Long →</a>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -64,6 +58,21 @@
     <li><a href="../contact.html">Contact</a></li>
   </ul>
 </footer>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

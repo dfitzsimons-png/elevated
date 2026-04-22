@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="post-style.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <a href="../index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
@@ -24,35 +23,32 @@
     <li><a href="../blog.html" class="active">Insights</a></li>
     <li><a href="../contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../contact.html">Contact</a>
+</div>
 <div class="post-header fade-up fade-up-1">
   <span class="post-num">Field Notes — 04</span>
   <h1 class="post-title">The Guest List at 7pm</h1>
 </div>
-
 <div class="divider" style="max-width:720px;"></div>
-
 <div class="post-body fade-up fade-up-2">
-<p>There's a version of this that happens at almost every large VIP operation. It's usually around two or three hours into doors, the initial rush has passed, and someone arrives at the entry point with a name that isn't on the list. Not just any someone — it's a guest of the headline act, or a sponsor's client, or someone who's absolutely certain they were added this morning.</p>
-
-<p>Managing late and disputed guest list additions is one of the more delicate operational moments in VIP work. Handle it badly and you've either let in someone who shouldn't be there, or you've turned away someone who absolutely should — both of which have consequences.</p>
-
-<p>The problem begins before the day itself, with list management. On large events, the VIP list can come from multiple sources: artist management, the promoter, sponsors, media, competition winners. Each source has a different deadline, a different level of reliability, and a different understanding of what "confirmed" means. If these lists aren't consolidated and closed at a specific time, with a specific person responsible, you will have disputes on the night.</p>
-
-<p>What actually helps is establishing a clear list lock time — usually a few hours before doors — after which additions require a specific authorisation process. Not a blanket refusal, but a chain: the person requesting the addition contacts a named person on the promoter or production side, who approves it and communicates it to the VIP entry team directly. This removes the scenario where someone on the ground has to make a judgement call about whether to believe a guest who claims they were added.</p>
-
-<p>On the night, the entry team needs to know what to do when a name isn't found. The answer is never a flat refusal at the door. It's a holding process — politely step the guest aside, take their details, attempt to verify, and resolve it away from the queue. Most disputes are resolvable within a few minutes if the right person on the team has the authority to make a call. The problem comes when nobody has that authority and the guest is left standing at the door while staff look at each other.</p>
-
-<p>Every large VIP operation should have a designated list resolver — someone senior enough to make a call and accountable enough to make the right one. It's one of the most important roles on the day and it's frequently not assigned to anyone specific.</p>
+<p>There's a version of this that happens at almost every large VIP operation. It's usually around two or three hours into doors, the initial rush has passed, and someone arrives at the entry point with a name that isn't on the list. Not just any someone — it's a guest of the headline act, or a sponsor's client, or someone who's absolutely certain they were added this morning.</p><p>Managing late and disputed guest list additions is one of the more delicate operational moments in VIP work. Handle it badly and you've either let in someone who shouldn't be there, or you've turned away someone who absolutely should — both of which have consequences.</p><p>The problem begins before the day itself, with list management. On large events, the VIP list can come from multiple sources: artist management, the promoter, sponsors, media, competition winners. Each source has a different deadline, a different level of reliability, and a different understanding of what "confirmed" means. If these lists aren't consolidated and closed at a specific time, with a specific person responsible, you will have disputes on the night.</p><p>What actually helps is establishing a clear list lock time — usually a few hours before doors — after which additions require a specific authorisation process. Not a blanket refusal, but a chain: the person requesting the addition contacts a named person on the promoter or production side, who approves it and communicates it to the VIP entry team directly. This removes the scenario where someone on the ground has to make a judgement call about whether to believe a guest who claims they were added.</p><p>On the night, the entry team needs to know what to do when a name isn't found. The answer is never a flat refusal at the door. It's a holding process — politely step the guest aside, take their details, attempt to verify, and resolve it away from the queue. Most disputes are resolvable within a few minutes if the right person on the team has the authority to make a call.</p><p>Every large VIP operation should have a designated list resolver — someone senior enough to make a call and accountable enough to make the right one. It's one of the most important roles on the day and it's frequently not assigned to anyone specific.</p>
 </div>
-
 <div class="post-nav fade-up fade-up-3">
   <a href="post-3.html">← What Sponsors Actually Want</a>
   <a href="../blog.html">All insights</a>
   <a href="post-5.html">What Makes a Good VIP Staff Member →</a>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -62,6 +58,21 @@
     <li><a href="../contact.html">Contact</a></li>
   </ul>
 </footer>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

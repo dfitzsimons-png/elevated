@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="post-style.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <a href="../index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
@@ -24,35 +23,32 @@
     <li><a href="../blog.html" class="active">Insights</a></li>
     <li><a href="../contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../contact.html">Contact</a>
+</div>
 <div class="post-header fade-up fade-up-1">
   <span class="post-num">Field Notes — 08</span>
   <h1 class="post-title">The Hour Nobody Plans For</h1>
 </div>
-
 <div class="divider" style="max-width:720px;"></div>
-
 <div class="post-body fade-up fade-up-2">
-<p>Ask any experienced VIP operator when the most pressured moment of a large event is, and the answer is rarely when doors open. It's usually somewhere between 45 minutes and 90 minutes after doors — when the initial rush has passed, the early arrivals have had a drink, and the real wave comes in.</p>
-
-<p>This window — the forgotten hour — is when a lot of VIP operations start to show strain. The entry queue, which was managed carefully in the first twenty minutes, becomes an afterthought once the gates have been open for a while. Staff who were on high alert at the start have relaxed slightly. The bar is doing serious volume and any gaps in service are starting to become visible. Latecomers are arriving alongside guests who are already on their second drink and have settled into their space.</p>
-
-<p>The problem with planning is that most operational timelines treat doors-open as the peak pressure point and plan accordingly. The real peak, particularly at concerts, is when the support act finishes and the changeover begins. That's when the bulk of guests who've been drifting in suddenly all want to be in the same viewing area at the same time. If the layout and staffing aren't built for that moment, you'll feel it.</p>
-
-<p>What helps is building the operational timeline around the show schedule, not just the doors schedule. If the headline act is on at 8:30pm, work backwards — what does the VIP area look like at 8:10, 8:00, 7:45? Where are the pressure points? Who is responsible for managing the viewing area transition? Is there a plan for people moving from the bar to the viewing platform in volume?</p>
-
-<p>The bar restock is another one. It's a surprisingly common failure point. Bars that were fully stocked at doors can be running low on specific products by the time the headline act comes on. Not because of poor initial stocking, but because nobody checked mid-event. Assign someone specifically to stock monitoring. It sounds obvious. It doesn't always happen.</p>
-
-<p>The forgotten hour is forgotten because it doesn't have a name. Give it one. Build a specific set of checks and responsibilities around it. The events where this window is managed well are the ones that feel effortless from a guest perspective.</p>
+<p>Ask any experienced VIP operator when the most pressured moment of a large event is, and the answer is rarely when doors open. It's usually somewhere between 45 minutes and 90 minutes after doors — when the initial rush has passed, the early arrivals have had a drink, and the real wave comes in.</p><p>This window — the forgotten hour — is when a lot of VIP operations start to show strain. The entry queue, which was managed carefully in the first twenty minutes, becomes an afterthought once the gates have been open for a while. Staff who were on high alert at the start have relaxed slightly. The bar is doing serious volume and any gaps in service are starting to become visible.</p><p>The problem with planning is that most operational timelines treat doors-open as the peak pressure point and plan accordingly. The real peak, particularly at concerts, is when the support act finishes and the changeover begins. That's when the bulk of guests who've been drifting in suddenly all want to be in the same viewing area at the same time. If the layout and staffing aren't built for that moment, you'll feel it.</p><p>What helps is building the operational timeline around the show schedule, not just the doors schedule. If the headline act is on at 8:30pm, work backwards — what does the VIP area look like at 8:10, 8:00, 7:45? Where are the pressure points? Who is responsible for managing the viewing area transition?</p><p>The bar restock is another one. It's a surprisingly common failure point. Bars that were fully stocked at doors can be running low on specific products by the time the headline act comes on. Not because of poor initial stocking, but because nobody checked mid-event. Assign someone specifically to stock monitoring. It sounds obvious. It doesn't always happen.</p><p>The forgotten hour is forgotten because it doesn't have a name. Give it one. Build a specific set of checks and responsibilities around it. The events where this window is managed well are the ones that feel effortless from a guest perspective.</p>
 </div>
-
 <div class="post-nav fade-up fade-up-3">
   <a href="post-7.html">← Difficult Guests and the Art of Not Making It Worse</a>
   <a href="../blog.html">All insights</a>
   <a href="post-9.html">Talking to Production and Security →</a>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -62,6 +58,21 @@
     <li><a href="../contact.html">Contact</a></li>
   </ul>
 </footer>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

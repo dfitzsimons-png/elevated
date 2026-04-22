@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="post-style.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <a href="../index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
@@ -24,37 +23,32 @@
     <li><a href="../blog.html" class="active">Insights</a></li>
     <li><a href="../contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../contact.html">Contact</a>
+</div>
 <div class="post-header fade-up fade-up-1">
   <span class="post-num">Field Notes — 05</span>
   <h1 class="post-title">What Makes a Good VIP Staff Member</h1>
 </div>
-
 <div class="divider" style="max-width:720px;"></div>
-
 <div class="post-body fade-up fade-up-2">
-<p>The instinct when hiring for a VIP area is to look for polished, presentable people who are good with people. That's not wrong, but it's incomplete, and the gaps in that criteria tend to show up in the moments that matter.</p>
-
-<p>The quality that actually separates a good VIP team member from a great one is composure under ambiguity. Not just staying calm when something goes wrong — that's necessary but it's the minimum — but the ability to function effectively when the situation is unclear and information is incomplete. Large events generate ambiguity constantly. The running order changes. A guest arrives and the wristband system is down. Two people claim the same table. A member of the security team is insisting on something that contradicts the brief.</p>
-
-<p>In those moments, the team member who freezes or who escalates everything is a liability. The one who can assess, decide, act, and communicate without needing to be hand-held is worth considerably more than their day rate suggests.</p>
-
-<p>The second quality is genuine situational awareness. Not just watching the obvious — the queue length, the bar situation — but reading the room. Noticing the group whose body language suggests something is wrong before anyone has said anything. Catching the guest who's been standing near the bar for ten minutes looking slightly lost. These small interventions, delivered quietly and without fuss, are what guests remember as a great experience, even if they can't articulate why.</p>
-
-<p>What doesn't work — and this is worth saying plainly — is over-formality. VIP hospitality in an Irish context specifically doesn't respond well to staff who are stiff, scripted, or who maintain a professional distance that feels cold. Guests want to feel looked after, not processed. The warmth has to be real, not performed.</p>
-
-<p>In terms of briefing, the biggest mistake is spending the bulk of pre-event time on logistics — where the bar is, what the wristbands look like — and not enough on scenarios. Walk the team through five or six things that might go wrong and ask them how they'd handle it. Not to prescribe a response, but to get them thinking in operational terms before the doors open.</p>
-
-<p>The best VIP staff don't need constant direction. They're watching, anticipating, and moving before they're asked to.</p>
+<p>The instinct when hiring for a VIP area is to look for polished, presentable people who are good with people. That's not wrong, but it's incomplete, and the gaps in that criteria tend to show up in the moments that matter.</p><p>The quality that actually separates a good VIP team member from a great one is composure under ambiguity. Not just staying calm when something goes wrong — that's necessary but it's the minimum — but the ability to function effectively when the situation is unclear and information is incomplete. Large events generate ambiguity constantly. The running order changes. A guest arrives and the wristband system is down. Two people claim the same table. A member of the security team is insisting on something that contradicts the brief.</p><p>In those moments, the team member who freezes or who escalates everything is a liability. The one who can assess, decide, act, and communicate without needing to be hand-held is worth considerably more than their day rate suggests.</p><p>The second quality is genuine situational awareness. Not just watching the obvious — the queue length, the bar situation — but reading the room. Noticing the group whose body language suggests something is wrong before anyone has said anything. Catching the guest who's been standing near the bar for ten minutes looking slightly lost. These small interventions, delivered quietly and without fuss, are what guests remember as a great experience, even if they can't articulate why.</p><p>What doesn't work — and this is worth saying plainly — is over-formality. VIP hospitality in an Irish context specifically doesn't respond well to staff who are stiff, scripted, or who maintain a professional distance that feels cold. Guests want to feel looked after, not processed. The warmth has to be real, not performed.</p><p>In terms of briefing, the biggest mistake is spending the bulk of pre-event time on logistics and not enough on scenarios. Walk the team through five or six things that might go wrong and ask them how they'd handle it. Not to prescribe a response, but to get them thinking in operational terms before the doors open.</p><p>The best VIP staff don't need constant direction. They're watching, anticipating, and moving before they're asked to.</p>
 </div>
-
 <div class="post-nav fade-up fade-up-3">
   <a href="post-4.html">← The Guest List at 7pm</a>
   <a href="../blog.html">All insights</a>
   <a href="post-6.html">Layout Is Never Just a Floor Plan →</a>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -64,6 +58,21 @@
     <li><a href="../contact.html">Contact</a></li>
   </ul>
 </footer>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

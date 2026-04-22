@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="post-style.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <a href="../index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
@@ -24,35 +23,32 @@
     <li><a href="../blog.html" class="active">Insights</a></li>
     <li><a href="../contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="../contact.html">Contact</a>
+</div>
 <div class="post-header fade-up fade-up-1">
   <span class="post-num">Field Notes — 06</span>
   <h1 class="post-title">Layout Is Never Just a Floor Plan</h1>
 </div>
-
 <div class="divider" style="max-width:720px;"></div>
-
 <div class="post-body fade-up fade-up-2">
-<p>The layout of a VIP area looks, on paper, like an administrative decision. Where the bar goes. Where the viewing platform sits. How the entry point connects to the rest of the space. In practice, it's one of the most consequential operational decisions you'll make, and it's almost always done too quickly and too early in the planning process.</p>
-
-<p>The classic layout mistake is designing from the inside out — deciding where the premium elements go first, and then figuring out how people will move through the space afterwards. This produces areas that look good on a site map and are quietly dysfunctional on the day.</p>
-
-<p>What you're actually designing when you lay out a VIP area is a series of guest journeys. From arrival to wristbanding. From entry to the bar. From the bar to the viewing area. From anywhere in the space to the toilets. Each of those journeys should feel intuitive. Not signposted to death — that creates the atmosphere of a shopping centre rather than a premium experience — but naturally legible. Guests should know where to go because the space leads them there.</p>
-
-<p>The bar position is the most critical single decision. A bar that's too close to the entrance creates a choke point immediately inside the door. A bar that's too far from the viewing area means guests have to choose between a drink and the show. The bar, in most configurations, works best as an anchor point towards the back or side of the space, with clear sightlines to the stage from the area in front of it.</p>
-
-<p>Covered and uncovered space matters more than it sounds. Guests at an outdoor show want flexibility — to be outside when the act is on, under cover when it's raining. An area that's entirely exposed, or one that's entirely tented, removes that flexibility. The best outdoor VIP layouts have a natural flow between covered and open space that guests self-regulate depending on conditions.</p>
-
-<p>The lesson that takes a few events to learn is that a layout needs to be walked, not just reviewed. Print it, take it to the site, walk every guest journey, and stand in the space as if you've just arrived. The problems that you can't see in a drawing become obvious in about ten minutes on the ground.</p>
+<p>The layout of a VIP area looks, on paper, like an administrative decision. Where the bar goes. Where the viewing platform sits. How the entry point connects to the rest of the space. In practice, it's one of the most consequential operational decisions you'll make, and it's almost always done too quickly and too early in the planning process.</p><p>The classic layout mistake is designing from the inside out — deciding where the premium elements go first, and then figuring out how people will move through the space afterwards. This produces areas that look good on a site map and are quietly dysfunctional on the day.</p><p>What you're actually designing when you lay out a VIP area is a series of guest journeys. From arrival to wristbanding. From entry to the bar. From the bar to the viewing area. From anywhere in the space to the toilets. Each of those journeys should feel intuitive. Not signposted to death — that creates the atmosphere of a shopping centre rather than a premium experience — but naturally legible. Guests should know where to go because the space leads them there.</p><p>The bar position is the most critical single decision. A bar that's too close to the entrance creates a choke point immediately inside the door. A bar that's too far from the viewing area means guests have to choose between a drink and the show. The bar, in most configurations, works best as an anchor point towards the back or side of the space, with clear sightlines to the stage from the area in front of it.</p><p>Covered and uncovered space matters more than it sounds. Guests at an outdoor show want flexibility — to be outside when the act is on, under cover when it's raining. The best outdoor VIP layouts have a natural flow between covered and open space that guests self-regulate depending on conditions.</p><p>The lesson that takes a few events to learn is that a layout needs to be walked, not just reviewed. Print it, take it to the site, walk every guest journey, and stand in the space as if you've just arrived. The problems that you can't see in a drawing become obvious in about ten minutes on the ground.</p>
 </div>
-
 <div class="post-nav fade-up fade-up-3">
   <a href="post-5.html">← What Makes a Good VIP Staff Member</a>
   <a href="../blog.html">All insights</a>
   <a href="post-7.html">Difficult Guests and the Art of Not Making It Worse →</a>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -62,6 +58,21 @@
     <li><a href="../contact.html">Contact</a></li>
   </ul>
 </footer>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>
