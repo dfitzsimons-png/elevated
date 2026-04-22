@@ -10,129 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&family=DM+Mono:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .about-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 64px 100px;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    margin-top: 64px;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-    color: var(--mid);
-    line-height: 1.9;
-    margin-bottom: 24px;
-  }
-
+  .about-body { max-width: 900px; margin: 0 auto; padding: 0 64px 100px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 64px; }
+  .about-text p { font-size: 1rem; color: var(--mid); line-height: 1.9; margin-bottom: 24px; }
   .about-text p:last-child { margin-bottom: 0; }
-
-  .about-text strong {
-    color: var(--off-white);
-    font-weight: 400;
-  }
-
-  .about-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .sidebar-block {
-    padding-top: 24px;
-    border-top: 1px solid var(--border-gold);
-  }
-
-  .sidebar-label {
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .sidebar-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .sidebar-list li {
-    font-size: 0.9rem;
-    color: rgba(244,241,235,0.6);
-    padding-left: 14px;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .sidebar-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 4px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .about-cta {
-    margin-top: 80px;
-    padding-top: 48px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .about-cta-text {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(244,241,235,0.7);
-    max-width: 420px;
-    line-height: 1.4;
-  }
-
-  .btn-gold {
-    display: inline-block;
-    padding: 14px 32px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-
-  .btn-gold:hover {
-    background: var(--gold);
-    color: var(--black);
-  }
-
-  @media (max-width: 768px) {
-    .about-body { padding: 0 28px 80px; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .about-cta { flex-direction: column; }
-  }
+  .about-text strong { color: var(--off-white); font-weight: 400; }
+  .about-sidebar { display: flex; flex-direction: column; gap: 40px; }
+  .sidebar-block { padding-top: 24px; border-top: 1px solid var(--border-gold); }
+  .sidebar-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .sidebar-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .sidebar-list li { font-size: 0.9rem; color: rgba(244,241,235,0.6); padding-left: 14px; position: relative; line-height: 1.5; }
+  .sidebar-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 1px; background: var(--gold); }
+  .about-cta { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .about-cta-text { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; font-style: italic; color: rgba(244,241,235,0.7); max-width: 420px; line-height: 1.4; }
+  .btn-gold { display: inline-block; padding: 14px 32px; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+  .btn-gold:hover { background: var(--gold); color: var(--black); }
+  @media (max-width: 768px) { .about-body { padding: 0 28px 80px; } .about-grid { grid-template-columns: 1fr; gap: 48px; } .about-cta { flex-direction: column; } }
 </style>
 </head>
-<body>
-
-<nav class="site-nav">
+<body><nav class="site-nav">
   <a href="index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
     <div class="nav-logo-rule"></div>
@@ -143,53 +39,35 @@
     <li><a href="blog.html">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="contact.html">Contact</a>
+</div>
 <div class="page-header fade-up fade-up-1">
   <span class="page-eyebrow">About Elevated</span>
   <h1 class="page-title">Built from the inside out.</h1>
-  <p class="page-intro">
-    This isn't a hospitality agency that has studied events from a distance.
-    Elevated was built on the back of years operating VIP and guest areas
-    at some of Ireland's largest live events.
-  </p>
+  <p class="page-intro">This isn't a hospitality agency that has studied events from a distance. Elevated was built on the back of years operating VIP and guest areas at some of Ireland's largest live events.</p>
 </div>
-
 <div class="divider"></div>
-
 <div class="about-body">
   <div class="about-grid fade-up fade-up-2">
-
     <div class="about-text">
-      <p>
-        Elevated is a specialist VIP and guest experience consultancy for live events in Ireland.
-        The work is operational — designing and managing VIP areas, sponsor hospitality, and
-        guest zones at large-scale concerts, festivals, and sporting events.
-      </p>
-      <p>
-        The founder has managed VIP operations for <strong>Live Nation and VIP Nation</strong>
-        across multi-night concert series at Malahide Castle and Marlay Park, and has delivered
-        guest experience programmes for events including the Irish Life Dublin Marathon.
-        That's 10,000 to 80,000-plus attendee environments, across seasons, across formats.
-      </p>
-      <p>
-        The work has always been about one thing: making the premium experience
-        actually live up to what it's supposed to be. Not on paper — on the ground,
-        on the day, when the gates open and the plan meets reality.
-      </p>
-      <p>
-        Elevated works with promoters, event organisers, venues, and brands who need
-        a specialist to take ownership of the VIP function — either as a standalone engagement
-        or embedded within an existing production team.
-      </p>
-      <p>
-        No large agency behind it. No account team billing hours. You work directly with
-        the person who'll be on site.
-      </p>
+      <p>Elevated is a specialist VIP and guest experience consultancy for live events in Ireland. The work is operational — designing and managing VIP areas, sponsor hospitality, and guest zones at large-scale concerts, festivals, and sporting events.</p>
+      <p>The founder has managed VIP operations for <strong>Live Nation and VIP Nation</strong> across multi-night concert series at Malahide Castle and Marlay Park, and has delivered guest experience programmes for events including the Irish Life Dublin Marathon. That's 10,000 to 80,000-plus attendee environments, across seasons, across formats.</p>
+      <p>The work has always been about one thing: making the premium experience actually live up to what it's supposed to be. Not on paper — on the ground, on the day, when the gates open and the plan meets reality.</p>
+      <p>Elevated works with promoters, event organisers, venues, and brands who need a specialist to take ownership of the VIP function — either as a standalone engagement or embedded within an existing production team.</p>
+      <p>No large agency behind it. No account team billing hours. You work directly with the person who'll be on site.</p>
     </div>
-
     <div class="about-sidebar">
-
       <div class="sidebar-block">
         <span class="sidebar-label">Currently operational</span>
         <ul class="sidebar-list">
@@ -197,7 +75,6 @@
           <li>Marlay Park Concert Series — Live Nation / VIP Nation</li>
         </ul>
       </div>
-
       <div class="sidebar-block">
         <span class="sidebar-label">Experience includes</span>
         <ul class="sidebar-list">
@@ -210,7 +87,6 @@
           <li>Team briefing and standards training</li>
         </ul>
       </div>
-
       <div class="sidebar-block">
         <span class="sidebar-label">Scale</span>
         <ul class="sidebar-list">
@@ -218,21 +94,13 @@
           <li>Ireland-based, available internationally</li>
         </ul>
       </div>
-
     </div>
-
   </div>
-
   <div class="about-cta fade-up fade-up-3">
-    <p class="about-cta-text">
-      If you're working on an event and the VIP experience needs to be right —
-      let's talk.
-    </p>
+    <p class="about-cta-text">If you're working on an event and the VIP experience needs to be right — let's talk.</p>
     <a href="contact.html" class="btn-gold">Get in touch</a>
   </div>
-
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -241,7 +109,21 @@
     <li><a href="blog.html">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-</footer>
-
+</footer><script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

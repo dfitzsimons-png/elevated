@@ -10,79 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&family=DM+Mono:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .blog-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 64px 100px;
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 64px;
-    background: var(--border);
-  }
-
-  .blog-card {
-    background: var(--black);
-    padding: 36px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    transition: background 0.25s;
-  }
-
-  .blog-card:hover {
-    background: rgba(184,154,90,0.05);
-  }
-
-  .blog-card-num {
-    font-family: var(--mono);
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    opacity: 0.7;
-  }
-
-  .blog-card-title {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 300;
-    line-height: 1.3;
-    color: var(--off-white);
-  }
-
-  .blog-card-excerpt {
-    font-size: 0.83rem;
-    color: rgba(244,241,235,0.45);
-    line-height: 1.7;
-    flex: 1;
-  }
-
-  .blog-card-arrow {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    opacity: 0;
-    transition: opacity 0.2s;
-    margin-top: 8px;
-  }
-
+  .blog-body { max-width: 900px; margin: 0 auto; padding: 0 64px 100px; }
+  .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 64px; background: var(--border); }
+  .blog-card { background: var(--black); padding: 36px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; transition: background 0.25s; }
+  .blog-card:hover { background: rgba(184,154,90,0.05); }
+  .blog-card-num { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; color: var(--gold); opacity: 0.7; }
+  .blog-card-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; line-height: 1.3; color: var(--off-white); }
+  .blog-card-excerpt { font-size: 0.83rem; color: rgba(244,241,235,0.45); line-height: 1.7; flex: 1; }
+  .blog-card-arrow { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.2s; margin-top: 8px; }
   .blog-card:hover .blog-card-arrow { opacity: 1; }
-
-  @media (max-width: 768px) {
-    .blog-body { padding: 0 28px 80px; }
-    .blog-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 768px) { .blog-body { padding: 0 28px 80px; } .blog-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
-<body>
-
-<nav class="site-nav">
+<body><nav class="site-nav">
   <a href="index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
     <div class="nav-logo-rule"></div>
@@ -93,96 +33,39 @@
     <li><a href="blog.html" class="active">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="contact.html">Contact</a>
+</div>
 <div class="page-header fade-up fade-up-1">
   <span class="page-eyebrow">Field notes</span>
   <h1 class="page-title">Operational insight from the ground.</h1>
-  <p class="page-intro">
-    Not theory. Not listicles. These are the things that actually matter
-    when you're running a VIP area at scale — written by someone who's been on site
-    at 7am dealing with them.
-  </p>
+  <p class="page-intro">Not theory. Not listicles. These are the things that actually matter when you're running a VIP area at scale — written by someone who's been on site at 7am dealing with them.</p>
 </div>
-
 <div class="divider"></div>
-
 <div class="blog-body fade-up fade-up-2">
   <div class="blog-grid">
-
-    <a href="blog/post-1.html" class="blog-card">
-      <span class="blog-card-num">01</span>
-      <h2 class="blog-card-title">The First Twenty Minutes After Gates Open</h2>
-      <p class="blog-card-excerpt">The most revealing period of any VIP operation. Whatever's been missed will show itself now — and guests are forming impressions that last the entire event.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-2.html" class="blog-card">
-      <span class="blog-card-num">02</span>
-      <h2 class="blog-card-title">Why Your VIP Queue Is Already Too Long</h2>
-      <p class="blog-card-excerpt">Long queues at VIP entry are one of the most common operational failures at live events — almost always caused by decisions made weeks before the day.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-3.html" class="blog-card">
-      <span class="blog-card-num">03</span>
-      <h2 class="blog-card-title">What Sponsors Actually Want</h2>
-      <p class="blog-card-excerpt">Sponsor hospitality is a different beast from general VIP operations. And the person managing that space is, whether they know it or not, part of a return on investment conversation.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-4.html" class="blog-card">
-      <span class="blog-card-num">04</span>
-      <h2 class="blog-card-title">The Guest List at 7pm</h2>
-      <p class="blog-card-excerpt">Managing late and disputed guest list additions is one of the more delicate operational moments in VIP work. Handle it badly and the consequences follow quickly.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-5.html" class="blog-card">
-      <span class="blog-card-num">05</span>
-      <h2 class="blog-card-title">What Makes a Good VIP Staff Member</h2>
-      <p class="blog-card-excerpt">The instinct is to look for polished, presentable people. That's not wrong, but it's incomplete — and the gaps in that criteria show up in the moments that matter most.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-6.html" class="blog-card">
-      <span class="blog-card-num">06</span>
-      <h2 class="blog-card-title">Layout Is Never Just a Floor Plan</h2>
-      <p class="blog-card-excerpt">The layout of a VIP area looks like an administrative decision. In practice, it's one of the most consequential choices you'll make — and it's almost always done too quickly.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-7.html" class="blog-card">
-      <span class="blog-card-num">07</span>
-      <h2 class="blog-card-title">Difficult Guests and the Art of Not Making It Worse</h2>
-      <p class="blog-card-excerpt">Every VIP area will have a difficult guest at some point. The question isn't how to prevent it — it's how to handle it without escalating or affecting the guests around them.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-8.html" class="blog-card">
-      <span class="blog-card-num">08</span>
-      <h2 class="blog-card-title">The Hour Nobody Plans For</h2>
-      <p class="blog-card-excerpt">The most pressured moment of a large event is rarely when doors open. It's usually somewhere between 45 and 90 minutes after — and most operational timelines miss it entirely.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-9.html" class="blog-card">
-      <span class="blog-card-num">09</span>
-      <h2 class="blog-card-title">Talking to Production and Security</h2>
-      <p class="blog-card-excerpt">The VIP team is never operating in isolation. The quality of communication between teams on event day has a direct impact on the guest experience — and it rarely gets enough attention.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
-    <a href="blog/post-10.html" class="blog-card">
-      <span class="blog-card-num">10</span>
-      <h2 class="blog-card-title">When It Goes Wrong</h2>
-      <p class="blog-card-excerpt">Things will go wrong at every large event. The quality of a VIP operation isn't measured by whether problems occur — it's measured by how they're managed when they do.</p>
-      <span class="blog-card-arrow">Read →</span>
-    </a>
-
+    <a href="blog/post-1.html" class="blog-card"><span class="blog-card-num">01</span><h2 class="blog-card-title">The First Twenty Minutes After Gates Open</h2><p class="blog-card-excerpt">The most revealing period of any VIP operation. Whatever's been missed will show itself now — and guests are forming impressions that last the entire event.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-2.html" class="blog-card"><span class="blog-card-num">02</span><h2 class="blog-card-title">Why Your VIP Queue Is Already Too Long</h2><p class="blog-card-excerpt">Long queues at VIP entry are one of the most common operational failures at live events — almost always caused by decisions made weeks before the day.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-3.html" class="blog-card"><span class="blog-card-num">03</span><h2 class="blog-card-title">What Sponsors Actually Want</h2><p class="blog-card-excerpt">Sponsor hospitality is a different beast from general VIP operations. And the person managing that space is part of a return on investment conversation.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-4.html" class="blog-card"><span class="blog-card-num">04</span><h2 class="blog-card-title">The Guest List at 7pm</h2><p class="blog-card-excerpt">Managing late and disputed guest list additions is one of the more delicate operational moments in VIP work. Handle it badly and the consequences follow quickly.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-5.html" class="blog-card"><span class="blog-card-num">05</span><h2 class="blog-card-title">What Makes a Good VIP Staff Member</h2><p class="blog-card-excerpt">The instinct is to look for polished, presentable people. That's not wrong, but it's incomplete — and the gaps show up in the moments that matter most.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-6.html" class="blog-card"><span class="blog-card-num">06</span><h2 class="blog-card-title">Layout Is Never Just a Floor Plan</h2><p class="blog-card-excerpt">The layout of a VIP area looks like an administrative decision. In practice, it's one of the most consequential choices you'll make — and it's almost always done too quickly.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-7.html" class="blog-card"><span class="blog-card-num">07</span><h2 class="blog-card-title">Difficult Guests and the Art of Not Making It Worse</h2><p class="blog-card-excerpt">Every VIP area will have a difficult guest at some point. The question is how to handle it without escalating or affecting the guests around them.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-8.html" class="blog-card"><span class="blog-card-num">08</span><h2 class="blog-card-title">The Hour Nobody Plans For</h2><p class="blog-card-excerpt">The most pressured moment of a large event is rarely when doors open. It's usually 45–90 minutes after — and most operational timelines miss it entirely.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-9.html" class="blog-card"><span class="blog-card-num">09</span><h2 class="blog-card-title">Talking to Production and Security</h2><p class="blog-card-excerpt">The quality of communication between teams on event day has a direct impact on the guest experience — and it rarely gets enough attention in pre-event planning.</p><span class="blog-card-arrow">Read →</span></a>
+    <a href="blog/post-10.html" class="blog-card"><span class="blog-card-num">10</span><h2 class="blog-card-title">When It Goes Wrong</h2><p class="blog-card-excerpt">The quality of a VIP operation isn't measured by whether problems occur — it's measured by how they're managed when they do.</p><span class="blog-card-arrow">Read →</span></a>
   </div>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -191,7 +74,21 @@
     <li><a href="blog.html">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-</footer>
-
+</footer><script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

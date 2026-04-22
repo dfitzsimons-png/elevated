@@ -11,203 +11,61 @@
 <link rel="stylesheet" href="style.css">
 <style>
   body { display: flex; flex-direction: column; overflow-x: hidden; }
-
-  .bg-image {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: center 30%;
-    background-repeat: no-repeat;
-  }
-
-  .bg-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(10,9,7,0.90) 0%, rgba(10,9,7,0.74) 50%, rgba(10,9,7,0.62) 100%);
-  }
-
-  .page-wrap {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 52px 64px;
-  }
-
-  /* Override nav for home page — no fixed background needed over the image */
-  .site-nav {
-    background: none;
-    position: relative;
-    padding: 0;
-    margin-bottom: auto;
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 52px;
-    max-width: 780px;
-  }
-
-  h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.07;
-    letter-spacing: -0.01em;
-    margin-bottom: 28px;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: rgba(244,241,235,0.5);
-  }
-
-  .descriptor {
-    font-size: 0.95rem;
-    color: rgba(244,241,235,0.62);
-    max-width: 500px;
-    border-left: 1px solid var(--border-gold);
-    padding-left: 20px;
-    line-height: 1.85;
-  }
-
-  .contact-strip {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding-top: 36px;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-
+  .bg-image { position: fixed; inset: 0; z-index: 0; background-image: url('bg.jpg'); background-size: cover; background-position: center 30%; background-repeat: no-repeat; }
+  .bg-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,9,7,0.90) 0%, rgba(10,9,7,0.74) 50%, rgba(10,9,7,0.62) 100%); }
+  .page-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; padding: 52px 64px; }
+  .site-nav { background: none; position: relative; padding: 0; margin-bottom: auto; }
+  main { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 52px; max-width: 780px; }
+  h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.07; letter-spacing: -0.01em; margin-bottom: 28px; }
+  h1 em { font-style: italic; color: rgba(244,241,235,0.5); }
+  .descriptor { font-size: 0.95rem; color: rgba(244,241,235,0.62); max-width: 500px; border-left: 1px solid var(--border-gold); padding-left: 20px; line-height: 1.85; }
+  .contact-strip { display: flex; align-items: center; gap: 40px; padding-top: 36px; border-top: 1px solid var(--border); flex-wrap: wrap; }
   .contact-item { display: flex; flex-direction: column; gap: 5px; }
-
-  .contact-label {
-    font-family: var(--mono);
-    font-size: 0.54rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .contact-value {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--off-white);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .contact-label { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .contact-value { font-family: var(--serif); font-size: 1.05rem; font-weight: 300; color: var(--off-white); text-decoration: none; transition: color 0.2s; }
   .contact-value:hover { color: var(--gold-light); }
   .contact-value.small { font-size: 0.88rem; color: rgba(244,241,235,0.6); }
-
   .contact-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
-
-  .linkedin-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(244,241,235,0.4);
-    text-decoration: none;
-    transition: color 0.2s;
-    margin-left: auto;
-  }
-
+  .linkedin-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244,241,235,0.4); text-decoration: none; transition: color 0.2s; margin-left: auto; }
   .linkedin-link:hover { color: var(--gold); }
   .linkedin-link svg { width: 13px; height: 13px; fill: currentColor; }
-
-  .home-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 24px;
-  }
-
-  .footer-left {
-    font-family: var(--mono);
-    font-size: 0.54rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(244,241,235,0.2);
-  }
-
-  .status-dot {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 0.54rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(244,241,235,0.22);
-  }
-
-  .status-dot::before {
-    content: '';
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--gold);
-    opacity: 0.55;
-    animation: pulse 2.5s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.9; transform: scale(1.3); }
-  }
-
-  @media (max-width: 680px) {
-    .page-wrap { padding: 36px 28px; }
-    h1 { font-size: 2.6rem; }
-    .contact-strip { gap: 24px; }
-    .contact-divider { display: none; }
-    .linkedin-link { margin-left: 0; width: 100%; }
-    .bg-image { background-position: 65% center; }
-  }
+  .home-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; }
+  .footer-left { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,241,235,0.2); }
+  .status-dot { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,241,235,0.22); }
+  .status-dot::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.55; animation: pulse 2.5s ease infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.9; transform: scale(1.3); } }
+  @media (max-width: 680px) { .page-wrap { padding: 36px 28px; } h1 { font-size: 2.6rem; } .contact-strip { gap: 24px; } .contact-divider { display: none; } .linkedin-link { margin-left: 0; width: 100%; } .bg-image { background-position: 65% center; } }
 </style>
 </head>
-<body>
-
+<body><nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Elevated</span>
+    <div class="nav-logo-rule"></div>
+    <span class="nav-logo-sub">VIP &amp; Guest Experience</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Insights</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="contact.html">Contact</a>
+</div>
 <div class="bg-image"></div>
-
 <div class="page-wrap">
-
-  <nav class="site-nav">
-    <a href="index.html" class="nav-logo">
-      <span class="nav-logo-name">Elevated</span>
-      <div class="nav-logo-rule"></div>
-      <span class="nav-logo-sub">VIP &amp; Guest Experience</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Insights</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
   <main>
-    <h1 class="fade-up fade-up-1">
-      We make VIP and<br>
-      Guest areas <em>work.</em>
-    </h1>
-    <p class="descriptor fade-up fade-up-2">
-      Specialist VIP and guest experience operations embedded inside live events.
-      From multi-night concert series to major sporting events, we are operator-led,
-      ground-up, and built around what your guests actually experience.
-    </p>
-
+    <h1 class="fade-up fade-up-1">We make VIP and<br>Guest areas <em>work.</em></h1>
+    <p class="descriptor fade-up fade-up-2">Specialist VIP and guest experience operations embedded inside live events. From multi-night concert series to major sporting events, we are operator-led, ground-up, and built around what your guests actually experience.</p>
     <div class="contact-strip fade-up fade-up-3">
       <div class="contact-item">
         <span class="contact-label">Email</span>
@@ -224,13 +82,26 @@
       </a>
     </div>
   </main>
-
   <div class="home-footer fade-up fade-up-4">
-    <span class="footer-left">© 2026 Elevated</span>
+    <span class="footer-left">&copy; 2026 Elevated</span>
     <span class="status-dot">elevated.ie</span>
   </div>
-
 </div>
-
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>

@@ -10,134 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&family=DM+Mono:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .contact-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 64px 100px;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 80px;
-    margin-top: 64px;
-    align-items: start;
-  }
-
-  .contact-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .contact-block {
-    padding-top: 24px;
-    border-top: 1px solid var(--border-gold);
-  }
-
-  .contact-block-label {
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .contact-block-value {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--off-white);
-    text-decoration: none;
-    transition: color 0.2s;
-    display: block;
-    line-height: 1.5;
-  }
-
+  .contact-body { max-width: 900px; margin: 0 auto; padding: 0 64px 100px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; margin-top: 64px; align-items: start; }
+  .contact-sidebar { display: flex; flex-direction: column; gap: 40px; }
+  .contact-block { padding-top: 24px; border-top: 1px solid var(--border-gold); }
+  .contact-block-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
+  .contact-block-value { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: var(--off-white); text-decoration: none; transition: color 0.2s; display: block; line-height: 1.5; }
   .contact-block-value:hover { color: var(--gold); }
-
-  .contact-block-note {
-    font-size: 0.82rem;
-    color: rgba(244,241,235,0.45);
-    margin-top: 8px;
-    line-height: 1.6;
-  }
-
-  .linkedin-block {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(244,241,235,0.45);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .contact-block-note { font-size: 0.82rem; color: rgba(244,241,235,0.45); margin-top: 8px; line-height: 1.6; }
+  .linkedin-block { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,235,0.45); text-decoration: none; transition: color 0.2s; }
   .linkedin-block:hover { color: var(--gold); }
   .linkedin-block svg { width: 14px; height: 14px; fill: currentColor; }
-
-  /* ── FORM AREA ── */
-  .form-wrap {
-    background: rgba(244,241,235,0.03);
-    border: 1px solid var(--border);
-    padding: 40px;
-  }
-
-  .form-wrap-label {
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  /* Google Form embed */
-  .google-form-embed {
-    width: 100%;
-    border: none;
-    min-height: 600px;
-    background: transparent;
-  }
-
-  /* Fallback if no form embedded yet */
-  .form-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    text-align: center;
-    gap: 16px;
-  }
-
-  .form-placeholder p {
-    font-size: 0.9rem;
-    color: rgba(244,241,235,0.4);
-    line-height: 1.7;
-  }
-
-  .form-placeholder a {
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    .contact-body { padding: 0 28px 80px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-    .form-wrap { padding: 28px 20px; }
-  }
+  .form-wrap { background: rgba(244,241,235,0.03); border: 1px solid var(--border); padding: 40px; }
+  .form-wrap-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: block; }
+  .google-form-embed { width: 100%; border: none; min-height: 600px; background: transparent; }
+  @media (max-width: 768px) { .contact-body { padding: 0 28px 80px; } .contact-grid { grid-template-columns: 1fr; gap: 48px; } .form-wrap { padding: 28px 20px; } }
 </style>
 </head>
-<body>
-
-<nav class="site-nav">
+<body><nav class="site-nav">
   <a href="index.html" class="nav-logo">
     <span class="nav-logo-name">Elevated</span>
     <div class="nav-logo-rule"></div>
@@ -148,43 +38,43 @@
     <li><a href="blog.html">Insights</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="about.html">About</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="blog.html">Insights</a>
+  <div class="mobile-menu-rule"></div>
+  <a href="contact.html">Contact</a>
+</div>
 <div class="page-header fade-up fade-up-1">
   <span class="page-eyebrow">Get in touch</span>
   <h1 class="page-title">Talk to us directly.</h1>
-  <p class="page-intro">
-    No pitch decks, no discovery calls. If you're working on an event
-    and wondering whether the VIP experience will hold up — one conversation
-    is usually enough to know if we can help.
-  </p>
+  <p class="page-intro">No pitch decks, no discovery calls. If you're working on an event and wondering whether the VIP experience will hold up — one conversation is usually enough to know if we can help.</p>
 </div>
-
 <div class="divider"></div>
-
 <div class="contact-body">
   <div class="contact-grid fade-up fade-up-2">
-
     <div class="contact-sidebar">
-
       <div class="contact-block">
         <span class="contact-block-label">Email</span>
         <a href="mailto:dave@elevated.ie" class="contact-block-value">dave@elevated.ie</a>
         <p class="contact-block-note">Direct to the person you'll be working with.</p>
       </div>
-
       <div class="contact-block">
         <span class="contact-block-label">Based in</span>
         <span class="contact-block-value" style="cursor:default;">Dublin, Ireland</span>
         <p class="contact-block-note">Operating across Ireland and available internationally.</p>
       </div>
-
       <div class="contact-block">
         <span class="contact-block-label">Currently operational</span>
         <span class="contact-block-value" style="cursor:default; font-size:0.95rem;">Malahide Castle &amp; Marlay Park</span>
         <p class="contact-block-note">Live Nation / VIP Nation, Summer 2026</p>
       </div>
-
       <div class="contact-block">
         <span class="contact-block-label">Connect</span>
         <a href="https://www.linkedin.com/in/davidfitz" target="_blank" rel="noopener" class="linkedin-block">
@@ -192,42 +82,13 @@
           LinkedIn — David Fitzsimons
         </a>
       </div>
-
     </div>
-
     <div class="form-wrap">
       <span class="form-wrap-label">Send a message</span>
-
-      <!--
-        INSTRUCTIONS: Replace the src URL below with your Google Form embed URL.
-        In Google Forms: Click Send → Embed tab → Copy the src URL from the iframe code.
-        Paste it here replacing: YOUR_GOOGLE_FORM_EMBED_URL
-      -->
-      <iframe
-        class="google-form-embed"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSe7j9RHj6tbqVBw3BqPCQB-BAciNVPe57CnXhF0EA3R5d1Uxg/viewform?embedded=true"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Contact form">
-        Loading form...
-      </iframe>
-
-      <!--
-        If you haven't set up your Google Form yet, delete the iframe above
-        and uncomment this placeholder instead:
-
-      <div class="form-placeholder">
-        <p>To get in touch, email us directly at<br>
-        <a href="mailto:dave@elevated.ie">dave@elevated.ie</a></p>
-      </div>
-      -->
-
+      <iframe class="google-form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSe7j9RHj6tbqVBw3BqPCQB-BAciNVPe57CnXhF0EA3R5d1Uxg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" title="Contact form">Loading form...</iframe>
     </div>
-
   </div>
 </div>
-
 <footer class="site-footer">
   <span class="footer-brand">Elevated</span>
   <ul class="footer-links">
@@ -236,7 +97,21 @@
     <li><a href="blog.html">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-</footer>
-
+</footer><script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 </body>
 </html>
